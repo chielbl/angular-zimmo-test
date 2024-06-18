@@ -1,0 +1,15 @@
+<div class="comment">
+  <h3>Geef je graag wat meer uitleg?</h3>
+  <textarea
+    class="comment_textarea {{ !isValid && 'invalid' }}"
+    (change)="onChange($event)"
+    >{{ comment }}</textarea
+  >
+  @if(!isValid){
+  <p class="comment_message">Mag niet leeg zijn.</p>
+  }
+  <div class="comment_footer">
+    <p>Wij verwerken uw gegevens conform onze privacy policy</p>
+    <button class="btn" (click)="onClick()">Verzenden</button>
+  </div>
+</div>

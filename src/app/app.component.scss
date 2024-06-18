@@ -1,0 +1,52 @@
+@import "../sass/index.scss";
+
+.main {
+  display: flex;
+  gap: 48px;
+  flex-direction: column;
+  margin-top: 48px;
+
+  @include respond("desktop") {
+    min-height: 96vh;
+  }
+}
+
+.container {
+  margin: auto;
+  max-width: min-content;
+
+  &_rating {
+    transform: translateY(-20px);
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: $baseColor200;
+  padding: 32px 16px;
+
+  & h2 {
+    text-align: center;
+  }
+}
+
+.carousel {
+  display: grid;
+  justify-content: center;
+  gap: 24px;
+  grid-template-columns: repeat(1, minmax(320px, 400px));
+
+  @include respond("tablet") {
+    grid-template-columns: repeat(2, minmax(320px, 400px));
+  }
+
+  @include respond("2k") {
+    grid-template-columns: repeat(4, minmax(320px, 400px));
+  }
+
+  & li {
+    overflow: hidden;
+  }
+}

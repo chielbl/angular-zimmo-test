@@ -1,0 +1,38 @@
+@import "../../../sass/index.scss";
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+
+  & h3 {
+    text-align: center;
+  }
+
+  &_textarea {
+    height: 100px;
+
+    &[class*="invalid"] {
+      border-color: $errorColor;
+    }
+  }
+
+  &_message {
+    color: $errorColor;
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  &_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & p {
+      font-size: 12px;
+      font-style: italic;
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import "../../../sass/index.scss";
+
+.ratings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.rating {
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 100%;
+  box-shadow: $shadow;
+  cursor: pointer;
+
+  &-bad {
+    background-color: lighten($errorColor, 40%);
+    color: $errorColor;
+
+    &:hover,
+    &[class*="active"] {
+      background-color: $errorColor;
+      color: lighten($errorColor, 40%);
+    }
+  }
+
+  &-neutral {
+    background-color: lighten($warningColor, 40%);
+    color: $warningColor;
+
+    &:hover,
+    &[class*="active"] {
+      background-color: $warningColor;
+      color: lighten($warningColor, 40%);
+    }
+  }
+
+  &-good {
+    background-color: lighten($neutralColor, 40%);
+    color: $neutralColor;
+
+    &:hover,
+    &[class*="active"] {
+      background-color: $neutralColor;
+      color: lighten($neutralColor, 40%);
+    }
+  }
+
+  &-perfect {
+    background-color: lighten($successColor, 40%);
+    color: $successColor;
+
+    &:hover,
+    &[class*="active"] {
+      background-color: $successColor;
+      color: lighten($successColor, 40%);
+    }
+  }
+
+  &-excellent {
+    background-color: lighten($excellentColor, 40%);
+    color: $excellentColor;
+
+    &:hover,
+    &[class*="active"] {
+      background-color: $excellentColor;
+      color: lighten($excellentColor, 30%);
+    }
+  }
+}

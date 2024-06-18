@@ -1,0 +1,15 @@
+@import "../../../sass/index.scss";
+
+.banner {
+  background-color: $primaryColor;
+  padding-top: 24px;
+  padding-bottom: 48px;
+  width: 420px;
+  text-align: center;
+  color: $baseColor100;
+  border-radius: 100px;
+
+  @include respond("tablet") {
+    width: 600px;
+  }
+}
