@@ -4,11 +4,14 @@
     <div class="container_rating">
       <app-rating (selectedRating)="setRating($event)" />
     </div>
-    @if (rating){
+    @if (rating && !comment){
     <app-comment (onSend)="setComment($event)" />
+    } @if (comment){
+    <h3 class="success">Feedback met succes verzonden!</h3>
     }
     <app-info />
   </div>
+
   <footer class="footer">
     <h2>Hoe verkoop je het beste een huis?</h2>
     <ul class="carousel">
