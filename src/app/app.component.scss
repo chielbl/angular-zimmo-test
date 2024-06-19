@@ -12,7 +12,7 @@
 }
 
 .container {
-  margin: auto;
+  margin: 0 auto;
   max-width: min-content;
 
   &_rating {
@@ -30,6 +30,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  flex: 1;
   background-color: $baseColor200;
   padding: 32px 16px;
 
