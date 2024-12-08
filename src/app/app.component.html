@@ -1,23 +1,16 @@
 <main class="main">
-  <div class="container">
-    <app-banner />
-    <div class="container_rating">
-      <app-rating (selectedRating)="setRating($event)" />
-    </div>
-    @if (rating && !comment){
-    <app-comment (onSend)="setComment($event)" />
-    } @if (comment){
-    <h3 class="success">Feedback met succes verzonden!</h3>
-    }
-    <app-info />
-  </div>
+  <app-feedback />
+
+  <app-info />
 
   <footer class="footer">
     <h2>Hoe verkoop je het beste een huis?</h2>
     <ul class="carousel">
-      <li *ngFor="let x of [0, 1, 2, 3]">
-        <app-card />
-      </li>
+      @for (x of [0, 1, 2, 3]; track x) {
+        <li>
+          <app-card />
+        </li>
+      }
     </ul>
   </footer>
 </main>

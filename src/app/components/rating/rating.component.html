@@ -1,12 +1,12 @@
 <div class="ratings">
-  @for (rating of ratings; track rating) {
-  <span
-    class="rating rating-{{ rating.rating }} {{
-      selectedEmoji === rating.emoji ? 'active' : ''
-    }}"
-    (click)="onSelect(rating)"
-  >
-    <i class="bi bi-emoji-{{ rating.emoji }}"></i>
-  </span>
+  @for (r of ratings; track r) {
+    <span
+      class="rating rating-{{ r.score }} {{
+        selectedEmoji === r.emoji ? 'active' : ''
+      }}"
+      (click)="onSelect(r)"
+    >
+      <i class="bi bi-emoji-{{ r.emoji }}"></i>
+    </span>
   }
 </div>

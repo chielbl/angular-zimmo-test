@@ -11,21 +11,6 @@
   }
 }
 
-.container {
-  margin: 0 auto;
-  max-width: min-content;
-
-  &_rating {
-    transform: translateY(-20px);
-  }
-}
-
-.success {
-  padding: 16px;
-  background-color: rgba($successColor, 0.2);
-  color: $successColor;
-}
-
 .footer {
   display: flex;
   flex-direction: column;

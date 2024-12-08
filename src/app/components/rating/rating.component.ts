@@ -1,41 +1,48 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { Component, EventEmitter, Output,Input } from "@angular/core";
+import { Rating } from "./rating.model";
 
 @Component({
-  selector: 'app-rating',
+  selector: "app-rating",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './rating.component.html',
-  styleUrl: './rating.component.scss',
+  templateUrl: "./rating.component.html",
+  styleUrl: "./rating.component.scss",
 })
 export class RatingComponent {
-  ratings: any = [
+  ratings: Rating[] = [
     {
-      rating: 'bad',
-      emoji: 'frown',
+      score: "bad",
+      emoji: "frown",
     },
     {
-      rating: 'neutral',
-      emoji: 'neutral',
+      score: "neutral",
+      emoji: "neutral",
     },
     {
-      rating: 'good',
-      emoji: 'smile',
+      score: "good",
+      emoji: "smile",
     },
     {
-      rating: 'perfect',
-      emoji: 'laughing',
+      score: "perfect",
+      emoji: "laughing",
     },
     {
-      rating: 'excellent',
-      emoji: 'heart-eyes',
+      score: "excellent",
+      emoji: "heart-eyes",
     },
   ];
-  selectedEmoji: any = null;
+  selectedEmoji: string = "";
 
+  @Input() rating?: Rating;
   @Output() selectedRating = new EventEmitter<any>();
 
-  onSelect(rating: any) {
+  ngOnInit() {
+    this.selectedEmoji = this.rating?.emoji || "";
+    console.log("rating", this.rating);
+  }
+
+  onSelect(rating: Rating) {
     this.selectedEmoji = rating.emoji;
     this.selectedRating.emit(rating);
   }

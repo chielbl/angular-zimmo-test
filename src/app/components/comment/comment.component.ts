@@ -1,21 +1,20 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Event } from '@angular/router';
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
-  selector: 'app-comment',
+  selector: "app-comment",
   standalone: true,
   imports: [],
-  templateUrl: './comment.component.html',
-  styleUrl: './comment.component.scss',
+  templateUrl: "./comment.component.html",
+  styleUrl: "./comment.component.scss",
 })
 export class CommentComponent {
-  comment: string = '';
+  comment: string = "";
   isValid: boolean = true;
 
   @Output() onSend = new EventEmitter<string>();
 
-  onChange(c: any) {
-    this.comment = c.target.value;
+  onChange(e: any) {
+    this.comment = e.target.value;
   }
 
   onClick() {

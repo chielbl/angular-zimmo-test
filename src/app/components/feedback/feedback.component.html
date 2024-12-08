@@ -1,0 +1,35 @@
+<div class="feedback">
+  <h3 class="feedback_header">Hoe eenvoudig kon je je huis online plaatsen?</h3>
+
+  @if (!isValid) {
+    <div class="feedback_form">
+      <app-rating
+        [rating]="feedback.rating"
+        (selectedRating)="setRating($event)"
+      />
+
+      @if (!isValid && feedback.rating) {
+        <div class="feedback_form_comment">
+          <h3>Geef je graag wat meer uitleg?</h3>
+          <textarea
+            class="{{ commentInValid && 'invalid' }}"
+            (change)="commentOnChange($event)"
+            >{{ feedback.comment }}</textarea
+          >
+          @if (commentInValid) {
+            <p>Mag niet leeg zijn.</p>
+          }
+        </div>
+
+        <div class="form_footer">
+          <p>Wij verwerken uw gegevens conform onze privacy policy</p>
+          <button class="btn" (click)="onSubmit()">Verzenden</button>
+        </div>
+      }
+    </div>
+  }
+
+  @if (isValid) {
+    <h3 class="success">Feedback met succes verzonden!</h3>
+  }
+</div>
